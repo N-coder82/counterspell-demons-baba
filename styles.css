@@ -1,0 +1,151 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0b0b0b;
+    color: #e0e0e0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-weight: 300; /* Thinner font */
+}
+
+header {
+    background-color: #141414;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid red; /* Red accent */
+}
+
+header h1 {
+    margin: 0;
+    position: relative;
+    animation: glitch 1s infinite, flash 1.5s infinite;
+    font-weight: 300; /* Thinner font */
+}
+
+main {
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+    border-top: 2px solid red; /* Red accent */
+}
+
+.cta-button {
+    background-color: #cc3700;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 1.2em;
+    position: relative;
+    animation: glitch 1s infinite, flash 1.5s infinite;
+    font-weight: 300; /* Thinner font */
+    border: 2px solid red; /* Red accent */
+}
+
+.cta-button:hover {
+    background-color: #b33200;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes glitch-skew {
+    0% {
+        transform: skew(0deg);
+    }
+    20% {
+        transform: skew(2deg);
+    }
+    40% {
+        transform: skew(-2deg);
+    }
+    60% {
+        transform: skew(2deg);
+    }
+    80% {
+        transform: skew(-2deg);
+    }
+    100% {
+        transform: skew(0deg);
+    }
+}
+
+@keyframes flash {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+header h1::before,
+header h1::after,
+.cta-button::before,
+.cta-button::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    right: 0;
+    animation: glitch-skew 1s infinite, flash 1.5s infinite;
+    opacity: 0.8;
+}
+
+header h1::before {
+    color: #ff00c1;
+    z-index: -1;
+    clip-path: inset(24px 0 90px 0);
+}
+
+header h1::after {
+    color: #00fff9;
+    z-index: -2;
+    clip-path: inset(85px 0 140px 0);
+}
+
+.cta-button::before {
+    color: #ff00c1;
+    z-index: -1;
+    clip-path: inset(24px 0 90px 0);
+}
+
+.cta-button::after {
+    color: #00fff9;
+    z-index: -2;
+    clip-path: inset(85px 0 140px 0);
+}
+
+/* New styles for the HTML elements */
+h2 {
+    font-weight: 300;
+    color: #e0e0e0;
+}
+
+div {
+    text-align: center;
+}
+
+img {
+    width: 75%;
+}
